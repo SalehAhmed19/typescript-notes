@@ -66,4 +66,44 @@ const user: {
 যদি কোনো ```property``` এর সাথে ```?``` ```Question mark``` (Example: ```isMarried?:boolean```) থাকে তাহলে ওই ```property``` ```optional``` হয়ে যায়। অর্থাৎ ভ্যালু এসাইন না করলেও কোনো ```error``` আসে না।  
 
 যদি specific কোনো ```value``` বসাতে হয় তাহলে ```type``` declare করার সময় সরাসরি ```type``` এর পরিবর্তে ```value``` বসানো যায়।  
-```company:string``` এর পরিবর্তে ```company: "CodeVexa"``` লিখা যেতে পারে।
+```company:string``` এর পরিবর্তে ```company: "CodeVexa"``` লিখা যেতে পারে। এটা কে বলে ```literal type```  
+
+**readonly:** এই ```keyword``` ব্যবহার করেও ```object``` এর কোনো ```property``` এর ```value``` কে unchangeable করা যায়।  
+
+## Function
+**Normal function:**
+```
+function add (num1:number, num2:number} {
+  return num1 + num2;
+}
+```
+**Arrow function:**
+```const add = (num1:number, num2:number): number => num1 + num2;```  
+
+কোনো ```function``` কে ```object``` এর মধ্যে ```define``` করলে তাকে ```mathod``` বলে।  
+```method``` এ ```return``` না করলে ```retun type``` কে ```void``` দিতে হবে।
+
+### Default Parameter
+```
+function add(num1:number, num2:number = 10): number {
+  return num1 + num2;
+}
+```
+```default parameter``` হিসেবে প্রথম ```parameter``` ব্যবহার করা যাবে না।
+
+### Spread operator & Rest operator
+```
+const arr = [1, 2, 3];
+const newArr = [8, 9, 0];
+arr.push(...newArr);
+```
+**```Rest operator``` আর ```Spread operator``` একই দেখতে কিন্তু এদের কাজ বিপরীত। ```Spread operator``` ```element``` গুলোকে আলাদা করে কিন্তু ```Rest operator``` ```element``` গুলোকে নিয়ে আলাদা ```array``` তৈরি করে।**  
+
+### Rest operator vs Spread operator
+**Rest operator:**  
+- The rest operator is used to collect multiple elements into a single array or object.
+- It is primarily used in function parameters to capture a variable number of arguments and in destructuring to gather the remaining properties.  
+
+**Spread operator:**
+- The spread operator is used to expand elements of an array or object into individual elements.
+- It is commonly used to create copies of arrays or objects, or to merge them.
