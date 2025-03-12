@@ -107,3 +107,20 @@ arr.push(...newArr);
 **Spread operator:**
 - The spread operator is used to expand elements of an array or object into individual elements.
 - It is commonly used to create copies of arrays or objects, or to merge them.
+
+### Array & Object destructuring
+**Array:** ```const [bestfriend] = friends;```  
+এখানে ```bestfriend``` নামক ```array``` তে টাইপ বলে দেয়ার প্রয়োজন পরে না।  
+
+**Object:**
+```
+const myFriend = {
+  fullname: "Usman",
+  age: 24,
+};
+
+const { fullname } = myFriend;
+```
+এখানেও আমাদের আলাদা ভাবে টাইপ বলে দিতে হবে না।  
+এই ক্ষেত্রে যদি ```const {fullname:string} = myFriend;``` দেই তাহলে ```string``` কে ```type``` হিসেবে না ধরে ভেরিয়েবলের পরিবর্তিত নাম হিসেবে ধরবে।  
+```destructuring``` করার সময় কোনো ভাবেই ```type``` ```declare``` করা যাবে না।
