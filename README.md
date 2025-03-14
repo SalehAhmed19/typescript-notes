@@ -91,7 +91,7 @@ function add(num1:number, num2:number = 10): number {
 ```
 ```default parameter``` হিসেবে প্রথম ```parameter``` ব্যবহার করা যাবে না।
 
-### Spread operator & Rest operator
+## Spread operator & Rest operator
 ```
 const arr = [1, 2, 3];
 const newArr = [8, 9, 0];
@@ -108,7 +108,7 @@ arr.push(...newArr);
 - The spread operator is used to expand elements of an array or object into individual elements.
 - It is commonly used to create copies of arrays or objects, or to merge them.
 
-### Array & Object destructuring
+## Array & Object destructuring
 **Array:** ```const [bestfriend] = friends;```  
 এখানে ```bestfriend``` নামক ```array``` তে টাইপ বলে দেয়ার প্রয়োজন পরে না।  
 
@@ -125,3 +125,73 @@ const { fullname } = myFriend;
 এই ক্ষেত্রে যদি ```const {fullname:string} = myFriend;``` দেই তাহলে ```string``` কে ```type``` হিসেবে না ধরে ভেরিয়েবলের পরিবর্তিত নাম হিসেবে ধরবে।  
 
 ```destructuring``` করার সময় কোনো ভাবেই ```type``` ```declare``` করা যাবে না।
+## Type Alias
+যদি আমরা কোনো ```object```এর প্রোপার্টি কে অপশনাল করতে চাই তাহলে প্রোপার্টি এর নামের পর ```?``` কোয়েশ্চেন মার্ক দিতে হবে।  
+
+আমরা যদি একই ধরনের ```object```-কে বার বার লিখতে যাই, সেক্ষেত্রে আমাদের বার বার ```type``` বলে দিতে হবে। এখানে আসে ```Type Alias```-এর কাজ। এটি কিছুটা ```custom type``` ডিক্লার করার মতো।  
+
+**Syntax:** ```type CustomTypeName = { properties: values };``` 
+```
+type CrushType = {
+  name: string;
+  age?: number;
+  profession: string;
+  address: string;
+};
+
+const crush1: CrushType = {
+  name: "Karagul Sultan",
+  age: 25,
+  profession: "Software Engineer",
+  address: "Istanbul, Turkey",
+};
+
+const crush2: CrushType = {
+  name: "Surmegul Sultan",
+  profession: "Next Level Developer",
+  address: "Bursa, Turkey",
+};
+```
+```Type Alias``` শুধুমাত্র ```object``` এই কাজ করে এমন না। বরং এটি প্রায় সকল ক্ষেত্রেই কাজ করে। ```Ex: string, array, boolean etc.```  
+**Example:**
+```
+// for boolean value
+type CrushMarriedType = boolean;
+
+const isCrushMarried: CrushMarriedType = false;
+
+// for string
+type CourseNameType = string;
+
+const courseName: CourseNameType = "Next Level 2";
+
+// for function
+type OperationType = (x: number, y: number) => number;
+
+const calculate = (num1: number, num2: number, operation: OperationType) => {
+  return operation(num1, num2);
+};
+
+calculate(10, 20, (x, y) => x + y);
+```
+## Union & Intersection Type
+```Union Type``` একাধিক ```type``` এক্সেপ্ট করতে পারে অথবা এর মাধ্যমে, অর্থাৎ হয় ```type 1``` আর না হয় ```type 2``` দুইটার যে কোনো টা এক্সেপ্ট করবে।  
+```Union Type``` ```or operation``` মতো কাজ করে।  
+**Example:**
+```
+type NoobDeveloper = {
+  name: string;
+};
+
+type JuniorDeveloper = {
+  name: string;
+  expertise: string;
+  experience: number;
+};
+
+const newDevelper: NoobDeveloper | JuniorDeveloper = {
+  name: "Steve",
+  expertise: "JavaScript",
+  experience: 1,
+};
+```
