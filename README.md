@@ -246,3 +246,4 @@ type NextLevelDeveloper = JuniorDeveloper & {
   level: Level;
 };
 ```
+```enum``` is not recommendable in ```typescript```
