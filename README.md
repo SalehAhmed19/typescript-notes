@@ -406,4 +406,4 @@ console.log({ home });
 
 আপাত দৃষ্টিতে `ternary operator` আর `nullish coalescing operator` এর কাজ একই রকম মনে হইলেও প্রকৃতপক্ষে ভিন্ন। `nullish coalescing operator` শুধুমাত্র `null` অথবা `undefined` এর উপরে কাজ করে।
 
-# --- --- --- End of Module --- --- ---
+# --- --- --- // End of Module 1 // --- --- ---
