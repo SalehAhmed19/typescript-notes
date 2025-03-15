@@ -344,3 +344,5 @@ const throwError = (message: string): never => {
 
 throwError("Error found");
 ```
+
+**Error throw syntax:** `throw new Error("Error message");`
