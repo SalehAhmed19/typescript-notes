@@ -209,3 +209,40 @@ type JuniorDeveloper = NoobDeveloper & {
 };
 ```
 যখন ```| or``` দেয়া থাকবে তখন বুঝবো সেটা ```union type``` এবং যখন ```& and``` দেয়া থাকবে তখন বুঝবো সেটা ```intersection type```.  
+
+### Enum:
+```enum``` এ ```default``` ভাবে ```enum member```-এর মান গুলো ক্রমান্বয়ে ```(0, 1, 2...)``` এভাবে নির্ধারণ করে।  
+**Example:**
+```
+// enum
+enum Level {
+  Junior,
+  mid,
+  Senior,
+}
+```
+
+আমরা চাইলে এভাবে ```enum members``` দের ```overwrite``` করতে পারি।  
+**Example:**
+```
+// enum
+enum Level {
+  Junior = "Junior",
+  mid = "Mid",
+  Senior = "Senior",
+}
+```
+**Full Example:**
+```
+// enum
+enum Level {
+  Junior = "Junior",
+  mid = "Mid",
+  Senior = "Senior",
+}
+
+type NextLevelDeveloper = JuniorDeveloper & {
+  leadershipExperience: number;
+  level: Level;
+};
+```
