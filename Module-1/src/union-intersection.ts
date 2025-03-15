@@ -22,8 +22,16 @@ const newDevelper: NoobDeveloper | JuniorDeveloper = {
   experience: 1,
 };
 
+// enum
+enum Level {
+  Junior = "Junior",
+  mid = "Mid",
+  Senior = "Senior",
+}
+
 type NextLevelDeveloper = JuniorDeveloper & {
   leadershipExperience: number;
+  level: Level;
 };
 
 const developer: NextLevelDeveloper = {
@@ -31,4 +39,5 @@ const developer: NextLevelDeveloper = {
   expertise: "JavaScript Next",
   experience: 2,
   leadershipExperience: 1,
+  level: Level.Senior,
 };
