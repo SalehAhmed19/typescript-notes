@@ -27,3 +27,10 @@ const getMyCarSpeed = (speed: unknown) => {
 
 getMyCarSpeed(10);
 getMyCarSpeed("10 Kmh");
+
+// Never type
+const throwError = (message: string): never => {
+  throw new Error(message + " :(");
+};
+
+throwError("Error found");

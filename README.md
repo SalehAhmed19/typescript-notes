@@ -329,3 +329,18 @@ const getMyCarSpeed = (speed: unknown) => {
 getMyCarSpeed(10);
 getMyCarSpeed("10 Kmh");
 ```
+
+### Never Type
+
+The never type in TypeScript represents a value that never occurs. It is used for functions that never return, unreachable code, and exhaustive type checking.  
+যদি কোনো ফাংশন কখনই কোনো কিছু রিটার্ন না করে সেই ক্ষেত্রে আমরা `never type` ব্যবহার করতে পারি।  
+**Example:**
+
+```
+// Never type
+const throwError = (message: string): never => {
+  throw new Error(message + " :(");
+};
+
+throwError("Error found");
+```
