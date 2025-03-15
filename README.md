@@ -346,3 +346,64 @@ throwError("Error found");
 ```
 
 **Error throw syntax:** `throw new Error("Error message");`
+
+## Ternary Operator, Nullish Coalescing Operator
+
+### Ternary Operator:
+
+`Ternary operator` এর সাহঅ্যাে আমরা সহজে `if-else` statement এর কাজ করে ফেলতে পারি।  
+**Example:**
+
+```
+// Ternary operator
+const age: number = 22;
+
+// if (age >= 18) {
+//   console.log("Adult");
+// } else {
+//   console.log("Child");
+// }
+
+const isAdult = age >= 18 ? "Adult" : "Child";
+console.log(isAdult);
+```
+
+### Nullish Coalescing Operator (`??`):
+
+`Nullish Coalescing Operator` এর কাজ হচ্ছে কোনো একটা `null` অথবা `undefined` এর উপর ভিত্তি করে একটা `value` set করা।  
+**Example:**
+
+```
+// Nullish Coalescing Operator
+const isAuthenticatedUser = null;
+const userName = isAuthenticatedUser ?? "Guest";
+
+console.log(userName);
+
+type Human = {
+  name: string;
+  age: number;
+  address: {
+    city: "Bursa";
+    home?: "Saray";
+    country: "Turkey";
+  };
+};
+
+const human1: Human = {
+  name: "John",
+  age: 25,
+  address: {
+    city: "Bursa",
+    country: "Turkey",
+  },
+};
+
+const home = human1.address?.home ?? "No home"; // default "No home"
+
+console.log({ home });
+```
+
+আপাত দৃষ্টিতে `ternary operator` আর `nullish coalescing operator` এর কাজ একই রকম মনে হইলেও প্রকৃতপক্ষে ভিন্ন। `nullish coalescing operator` শুধুমাত্র `null` অথবা `undefined` এর উপরে কাজ করে।
+
+# Module - 1 End
