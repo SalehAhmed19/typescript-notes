@@ -247,3 +247,23 @@ type NextLevelDeveloper = JuniorDeveloper & {
 };
 ```
 ### ```enum``` is <del>not recommendable</del> in ```typescript```
+
+## Nullable Type, Unknown Type, Never Type
+### Nullable:
+A ```nullable type``` in ```TypeScript``` is a ```type``` that allows a variable to hold ```null``` or ```undefined``` in addition to its main type.
+By ```default```, ```TypeScript``` does not allow ```null``` or ```undefined``` unless explicitly specified.
+
+
+```
+// Nullable type
+
+const searchName = (value: string | null) => {
+  if (value === null) {
+    console.log("There is nothing to search :(");
+  } else {
+    console.log("searching...");
+  }
+};
+
+searchName(null);
+```
