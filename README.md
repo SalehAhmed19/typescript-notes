@@ -246,4 +246,4 @@ type NextLevelDeveloper = JuniorDeveloper & {
   level: Level;
 };
 ```
-```enum``` is not recommendable in ```typescript```
+### ```enum``` is <del>not recommendable</del> in ```typescript```
