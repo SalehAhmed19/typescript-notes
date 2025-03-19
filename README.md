@@ -427,3 +427,5 @@ emni = "Next level web development";
 
 (emni as string).length;
 ```
+
+` Type assertion``-এর ক্ষেত্রে  `type` `declare`করার সময় আমাদের সতর্কতা অবলম্বন করতে হবে, কারন যদি আমরা কোনো`string` `value`এর জন্য`type` `number`করে দেই তাহলে`typescript` `type assertion`এর কারনে সেটাকে`number`হিসেবে ধরে নিবে। তখন কাঙ্খিত`output``` পাওয়া পসিবল হবে না।
