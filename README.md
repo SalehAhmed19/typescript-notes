@@ -406,4 +406,24 @@ console.log({ home });
 
 আপাত দৃষ্টিতে `ternary operator` আর `nullish coalescing operator` এর কাজ একই রকম মনে হইলেও প্রকৃতপক্ষে ভিন্ন। `nullish coalescing operator` শুধুমাত্র `null` অথবা `undefined` এর উপরে কাজ করে।
 
-# --- --- --- // End of Module 1 // --- --- ---
+---
+
+# // End of Module 1 //
+
+---
+
+## Type Assertion
+
+`Type assertion` is a way to tell the compiler that you know more about a value’s type than it does. It allows you to override TypeScript’s inferred type when you are confident about the actual type of a value.
+
+**Syntax:** `variableName as type`
+
+**Example:**
+
+```
+let emni: any;
+
+emni = "Next level web development";
+
+(emni as string).length;
+```
