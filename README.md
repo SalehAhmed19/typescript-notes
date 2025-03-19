@@ -497,6 +497,8 @@ const userWithInterface: IUser = {
 
 `interface` ব্যবহারের সুবিধা হইলো আমরা তাকে `extends` করতে পারি।
 
+**For Function**
+
 ```
 // interface
 interface IUser {
@@ -513,4 +515,32 @@ const user: IExtendedUser = {
   age: 30,
   role: "admin",
 };
+```
+
+`function` এর ক্ষেত্রে `type alias` কে ব্যবহার করা ভালো। `for clean code and better readablility`
+
+```
+// Using type alias
+type addNumbersType = (num1: number, num2: number) => number;
+
+const addNumbers: addNumbersType = (num1, num2) => num1 + num2;
+
+interface IAddNumbers {
+  (num1: number, num2: number): number;
+}
+
+const addingNumbers: IAddNumbers = (num1, num2) => num1 + num2;
+```
+
+**For Array** `interface IRollNumbers {[index: number]: number;}`
+
+```
+type rollNumbersType = number[];
+const rollNumbers: rollNumbersType = [1, 3, 4]; // [index]
+
+interface IRollNumbers {
+  [index: number]: number;
+}
+
+const roll: IRollNumbers = [2, 5, 6];
 ```
