@@ -16,3 +16,12 @@ function kgToGram(param: string | number): string | number | undefined {
 }
 
 const resultToBeNumber = kgToGram(1000) as number;
+
+type CustomErrorType = {
+  message: string;
+};
+
+try {
+} catch (err) {
+  console.log((err as CustomErrorType).message);
+}

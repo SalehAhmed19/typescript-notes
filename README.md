@@ -426,6 +426,91 @@ let emni: any;
 emni = "Next level web development";
 
 (emni as string).length;
+
+function kgToGram(param: string | number): string | number | undefined {
+  if (typeof param === "string") {
+    const value = parseFloat(param) * 1000;
+    return `The converted result is ${value} gram`;
+  }
+  if (typeof param === "number") {
+    const value = param * 1000;
+    return `The converted result is ${value} gram`;
+  }
+}
+
+const resultToBeNumber = kgToGram(1000) as number;
+
+type CustomErrorType = {
+  message: string;
+};
+
+try {
+} catch (err) {
+  console.log((err as CustomErrorType).message);
+}
 ```
 
 `Type assertion` -এর ক্ষেত্রে `type` `declare` করার সময় আমাদের সতর্কতা অবলম্বন করতে হবে, কারন যদি আমরা কোনো `string` `value` এর জন্য `type` `number` করে দেই তাহলে `typescript` `type assertion` এর কারনে সেটাকে `number` হিসেবে ধরে নিবে। তখন কাঙ্খিত `output` পাওয়া পসিবল হবে না।
+
+## Interface
+
+`interface` অনেকটা `type alias` এর মতোই একটা জিনিস। তবে `type alias` `primitive type` ডাটার ক্ষেত্রে ব্ব্যহার করা হয়। এবং `interface` `object type` ডাটার ক্ষেত্রে ব্যবহার করা হয়।
+
+**Example:**
+
+```
+// type alias
+type User = {
+  name: string;
+  age: number;
+};
+
+// interface
+interface IUser {
+  name: string;
+  age: number;
+}
+
+// type alias
+type User = {
+  name: string;
+  age: number;
+};
+
+// interface
+interface IUser {
+  name: string;
+  age: number;
+}
+
+const userWithTypeAlias: User = {
+  name: "Type Alias",
+  age: 100,
+};
+
+const userWithInterface: IUser = {
+  name: "Interface",
+  age: 200,
+};
+
+```
+
+`interface` ব্যবহারের সুবিধা হইলো আমরা তাকে `extends` করতে পারি।
+
+```
+// interface
+interface IUser {
+  name: string;
+  age: number;
+}
+
+interface IExtendedUser extends IUser {
+  role: string;
+}
+
+const user: IExtendedUser = {
+  name: "John",
+  age: 30,
+  role: "admin",
+};
+```
